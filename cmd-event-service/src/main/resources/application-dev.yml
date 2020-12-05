@@ -1,0 +1,19 @@
+server:
+  port: 9001
+
+
+spring:
+  application:
+    admin: cmd-event-service
+  profiles:
+    active: dev
+
+axon:
+  snapshot:
+    trigger:
+      treshold:
+        event: 100
+  distributed:
+    enabled: true
+  serializer:
+    messages: jackson

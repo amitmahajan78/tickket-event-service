@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.thesaastech.tickket</groupId>
+    <artifactId>event-services</artifactId>
+    <version>1.0</version>
+    <name>event-services</name>
+    <description>Event services for tickket project</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>cmd-event-service</module>
+        <module>query-event-service</module>
+    </modules>
+
+    <properties>
+        <java.version>11</java.version>
+        <kotlin.version>1.4.20</kotlin.version>
+
+        <axon.version>4.4.5</axon.version>
+        <axon.reactor.version>4.4.2</axon.reactor.version>
+        <axon.extension.tracing.version>4.4</axon.extension.tracing.version>
+
+    </properties>
+
+    <dependencies>
+
+        <!-- Axon -->
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-spring-boot-starter</artifactId>
+            <version>${axon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.axonframework.extensions.reactor</groupId>
+            <artifactId>axon-reactor-spring-boot-starter</artifactId>
+            <version>${axon.reactor.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-micrometer</artifactId>
+            <version>${axon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.axonframework.extensions.tracing</groupId>
+            <artifactId>axon-tracing-spring-boot-starter</artifactId>
+            <version>${axon.extension.tracing.version}</version>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.axonframework.extensions.kafka</groupId>
+            <artifactId>axon-kafka-spring-boot-starter</artifactId>
+            <version>4.0-RC3</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-test</artifactId>
+            <version>${axon.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+       <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--&lt;!&ndash; Kafka&ndash;&gt;
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+        </dependency>-->
+
+        <!-- Kotlin -->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-reflect</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+            <version>2.11.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jsonSchema</artifactId>
+            <version>2.11.3</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
+
+    </dependencies>
+</project>
