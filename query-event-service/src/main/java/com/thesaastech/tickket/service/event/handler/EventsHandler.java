@@ -6,6 +6,7 @@ import com.thesaastech.tickket.service.event.domain.Event;
 import com.thesaastech.tickket.service.event.repository.EventRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.config.ProcessingGroup;
+import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
 import org.axonframework.queryhandling.QueryUpdateEmitter;
 import org.springframework.data.domain.Example;
@@ -16,18 +17,17 @@ import java.util.List;
 
 @Slf4j
 @Component
-@ProcessingGroup("event")
-public class EventHandler {
+public class EventsHandler {
 
     private final EventRepository eventRepository;
     private final QueryUpdateEmitter queryUpdateEmitter;
 
-    public EventHandler(EventRepository eventRepository, QueryUpdateEmitter queryUpdateEmitter) {
+    public EventsHandler(EventRepository eventRepository, QueryUpdateEmitter queryUpdateEmitter) {
         this.eventRepository = eventRepository;
         this.queryUpdateEmitter = queryUpdateEmitter;
     }
 
-    @org.axonframework.eventhandling.EventHandler
+    @EventHandler
     void on(EventCreated eventCreated) {
         Event event = Event.builder()
                 .eventId(eventCreated.getEventId())

@@ -32,8 +32,8 @@ axon:
   distributed:
     enabled: true
   serializer:
+    events: jackson
     messages: xstream
-    events: xstream
   axonserver:
     client-id: query-event-service
     component-name: query-event-service

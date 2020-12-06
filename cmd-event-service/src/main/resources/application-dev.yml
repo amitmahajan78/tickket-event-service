@@ -16,8 +16,7 @@ axon:
   distributed:
     enabled: true
   serializer:
-    messages: xstream
-    events: xstream
+    events: jackson
   axonserver:
     client-id: cmd-event-service
     component-name: cmd-event-service

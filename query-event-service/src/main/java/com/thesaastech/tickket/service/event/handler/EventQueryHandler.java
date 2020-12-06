@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-@ProcessingGroup("event")
 public class EventQueryHandler {
 
     private final EventRepository eventRepository;
@@ -40,7 +39,7 @@ public class EventQueryHandler {
                 .dateTime(findDuplicateEvents.getDataTime())
                 .build();
 
-        log.info("Duplicate Query check :: " + example.toString());
+        log.info("Duplicate Query check completed :: " + example.toString());
 
         return (eventRepository.findAll(Example.of(example, exampleMatcher))).isEmpty();
     }
