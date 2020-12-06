@@ -1,9 +1,16 @@
 package com.thesaastech.tickket.service.event.web.rest.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class Events {
+@Getter
+@Setter
+@ToString
+public class EventResponseData {
 
     private UUID eventId;
     private String type;
@@ -13,5 +20,6 @@ public class Events {
     private String venueAddressLine;
     private String venueCity;
     private String venuePostcode;
+    private String status;
 
 }

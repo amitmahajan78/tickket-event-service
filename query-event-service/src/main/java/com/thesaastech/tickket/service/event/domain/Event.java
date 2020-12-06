@@ -26,4 +26,6 @@ public class Event {
     private String venueAddressLine;
     private String venueCity;
     private String venuePostcode;
+    private String status;
+    private String userId;
 }

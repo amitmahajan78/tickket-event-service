@@ -22,6 +22,7 @@ spring:
         hbm2ddl.auto: update
         implicit_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
         physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    show-sql: true
 
 axon:
   snapshot:
@@ -31,4 +32,8 @@ axon:
   distributed:
     enabled: true
   serializer:
-    messages: jackson
+    messages: xstream
+    events: xstream
+  axonserver:
+    client-id: query-event-service
+    component-name: query-event-service
